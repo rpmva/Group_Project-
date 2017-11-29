@@ -1,0 +1,31 @@
+{% extends "home-base.html"%}
+{% block title %}Home Page{% endblock %}
+
+{% block head%}
+  {{ super() }}
+{% endblock%}
+
+{% block page_content%}
+  <!-- Page Content -->
+  <div class="container">
+    <h1 class="mt-5"><i class="fa fa-hand-o-right" aria-hidden="true"></i> About The Group Members</h1>
+    <p>This project is developed by <a id="developer" href="https://github.com/rpmva" data-toggle="tooltip" data-placement="top" title="I am a student taught by the professor in MISY350"> Ryan McGovern</a>.</p>
+    <h2>Some of the things I have learned in MISY350: </h2>
+    <p><ol>
+      <li><i class="fa fa-html5" aria-hidden="true"></i> HTML</li>
+      <li><i class="fa fa-css3" aria-hidden="true"></i> CSS</li>
+      <li><i class="fa fa-github" aria-hidden="true"></i> github</li>
+    </ol>
+  </p>
+  <h3><i class="fa fa-rebel" aria-hidden="true"></i> Star Wars <i class="fa fa-empire" aria-hidden="true"></i></h3>
+  </div>
+{% endblock%}
+
+{% block scripts%}
+  {{super()}}
+  <script>
+  $(document).ready(function () {
+    $('#developer').tooltip()
+  });
+  </script>
+{% endblock%}
