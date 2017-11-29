@@ -1,21 +1,7 @@
-## Setup Instructions:
+## Information about our project
 
-Make sure to use Python version 2.7.x.
+We will be exploring the planets in the Milky Way throughout this project.
 
-Install `virtualenv` if needed.
+You will be able to find information about the planets on our webpage.
 
-If you do not have a virtual environment yet on the project folder, set it up with:
-
-    $ virtualenv venv
-
-Then activate the virtual environment
-
-    $ source venv/bin/activate
-
-Install packages
-
-    $ pip install -r requirements.txt
-
-To run the development server (use `-d` to enable debugger and reloader):
-
-    $ python manage.py runserver
+If you want to find out why Pluto is no longer a planet, check it out. 
