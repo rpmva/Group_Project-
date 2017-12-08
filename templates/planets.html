@@ -1,0 +1,37 @@
+
+{% extends "home-base.html"%}
+{% block title %}Planets{% endblock %}
+{% block head%}
+  {{ super() }}
+{% endblock%}
+{% block page_content%}
+
+  <!-- Page Content -->
+  <div class="container">
+    <h1 class="mt-5"><i class="fa fa-globe" aria-hidden="true"></i> Planets:</h1>
+    <ul>
+        {% for planet in planets %}
+          <li> <a href="#{{planet[0]}}" data-toggle="modal" data-target="#{{planet[0]}}" >{{planet[0]}}</a></li>
+
+          <div class="modal fade bannerformmodal" tabindex="-1" role="dialog" aria-labelledby="bannerformmodal" aria-hidden="true" id="{{planet[0]}}">
+           <div class="modal-dialog modal-sm">
+                 <div class="modal-content">
+                   <div class="modal-content">
+                         <div class="modal-header">
+                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                         <h4 class="modal-title" id="myModalLabel">{{planet[0]}}</h4>
+                         </div>
+                         <div class="modal-body">
+                           {{planet[2]}}
+                       </div>
+                     </div>
+
+                   </div>
+                 </div>
+               </div>
+        {% endfor%}
+    </ul>
+  </div>
+
+
+{% endblock%}
