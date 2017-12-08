@@ -74,6 +74,17 @@ def add_planets():
        return redirect(url_for('show_all_planets'))
 
 
+@app.route('/planets-directory/delete/<int:id>', methods=['GET', 'POST'])
+def delete_planet(id):
+    planet = Planet.query.filter_by(id=id).first()
+    if request.method == 'GET':
+        return render_template('planet-delete.html', planet=planet)
+    if request.method == 'POST':
+        db.session.delete(planet)
+        db.session.commit()
+        return redirect(url_for('show_all_planets'))
+
+
 @app.route('/members')
 def about():
     return render_template('members.html')
