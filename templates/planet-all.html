@@ -23,12 +23,15 @@
           <tr>
               <th scope="row">{{planet.id}}</th>
               <td>{{planet.planet}}</td>
-              <td>{{planet.moon_number}</td>
+              <td>{{planet.moon_number}}</td>
               <td>{{planet.description}}</td>
 
               <td>
                 <a href="/planets-directory/edit/{{planet.id}}" class="btn btn-success" role="button" aria-disabled="true">Edit</a>
               </td>
+              <td>
+                 <a href="/planets-directory/delete/{{planet.id}}" class ="btn btn-danger" role="button" aria-disabled="true"> Delete</a>
+             </td>
 
           </tr>
 

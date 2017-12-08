@@ -1,0 +1,37 @@
+{% extends "home-base.html"%}
+{% block title %}Delete Planet{% endblock %}
+{% block page_content%}
+
+  <!-- Page Content -->
+  <div class="container">
+     <h1 class="mt-5"><i class="fa fa-window-close" aria-hidden="true"></i> Delete Planet:</h1>
+    <form action="/planets-directory/delete/{{planet.id}}" method="post">
+      <div class="form-group">
+        <label>Planet</label>
+        <input class="form-control" type="text" name="planet" value="{{planet.planet}}" required="true" readonly="true">
+      </div>
+      <div class="form-group">
+        <label>Moon Number</label>
+        <textarea class="form-control" name="moon_number" required="true" readonly="true">{{planet.moon_number}}</textarea>
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <textarea class="form-control" name="description" required="true" readonly="true">{{planet.description}}</textarea>
+      </div>
+      <button type="submit" class="btn btn-danger" id="delete_btn">Delete</button>
+    </form>
+   </div>
+  {% endblock %}
+
+  {% block scripts%}
+    {{super()}}
+    <script>
+    $(document).ready(function () {
+      $('#delete_btn').click(function () {
+        if (! confirm('Are you sure?')) {
+          return false;
+        }
+      })
+    });
+    </script>
+  {% endblock%}
